@@ -1,0 +1,22 @@
+{
+  "name": "dreamdex-proof",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "read": "tsx proof.ts",
+    "place": "tsx proof.ts --place",
+    "bridge": "tsx bridge.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@somnia-chain/markets-sdk": "^0.32.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "viem": "^2.57.10"
+  }
+}
