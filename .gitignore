@@ -1,4 +1,9 @@
 node_modules/
-.env*
+.next/
+out/
+*.tsbuildinfo
+.env
+.env.local
+.env*.local
 .secrets/
 *.key
