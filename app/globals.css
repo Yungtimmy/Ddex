@@ -1,0 +1,246 @@
+:root {
+  color-scheme: dark;
+  --bg: #10120e;
+  --panel: #191c15;
+  --panel-2: #22261c;
+  --line: #34392c;
+  --text: #f4f1e6;
+  --muted: #c2c6b6;
+  --brass: #e0b15a;
+  --brass-ink: #241c0a;
+  --ok: #c5e0ae;
+  --bad: #f0a090;
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button, input { font: inherit; }
+
+button {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  cursor: pointer;
+}
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+button:focus-visible, input:focus-visible, a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}
+
+a { color: var(--brass); }
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hk-shell {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hk-header {
+  border-bottom: 1px solid var(--line);
+  background: #141710;
+}
+
+.hk-header-inner,
+.hk-banner,
+.hk-main {
+  width: min(760px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hk-header-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0 16px;
+  align-items: flex-end;
+}
+
+.hk-kicker {
+  margin: 0 0 4px;
+  color: var(--brass);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.hk-status, .hk-banner {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hk-status { margin: 6px 0 0; }
+
+.hk-banner {
+  margin: 0 0 14px;
+  color: var(--bad);
+}
+
+.hk-header-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.hk-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  min-height: 0;
+}
+
+.hk-log {
+  flex: 1;
+  overflow: auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hk-msg {
+  max-width: 40rem;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.hk-msg p {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+.hk-user {
+  align-self: flex-end;
+  background: #2a281c;
+}
+
+.hk-agent { align-self: flex-start; }
+
+.hk-msg a { display: inline-block; margin-top: 8px; }
+
+.hk-card {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.hk-card dl {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 6px 12px;
+  margin: 0;
+}
+
+.hk-card dl > div { display: contents; }
+
+.hk-card dt { color: var(--muted); }
+.hk-card dd {
+  margin: 0;
+  font-family: "IBM Plex Mono", "SFMono-Regular", ui-monospace, monospace;
+  font-size: 0.92rem;
+}
+
+.hk-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.hk-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.hk-card-actions button:first-child {
+  background: var(--brass);
+  color: var(--brass-ink);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.hk-card-done { border-top-color: #3e5234; }
+.hk-card-failed { border-top-color: #6a3a32; }
+
+.hk-composer {
+  display: flex;
+  gap: 8px;
+  position: sticky;
+  bottom: 0;
+  padding-top: 8px;
+  background: linear-gradient(to top, var(--bg) 70%, transparent);
+}
+
+.hk-composer input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+}
+
+.hk-composer button {
+  background: var(--brass);
+  color: var(--brass-ink);
+  border-color: transparent;
+  font-weight: 700;
+}
+
+.hk-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.hk-chips button {
+  color: var(--muted);
+  background: transparent;
+}
+
+@media (max-width: 640px) {
+  .hk-header-inner { flex-direction: column; align-items: stretch; }
+  .hk-header-actions { justify-content: flex-start; }
+  .hk-card dl { grid-template-columns: 1fr; }
+}

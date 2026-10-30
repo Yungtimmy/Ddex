@@ -1,22 +1,30 @@
 {
   "name": "dreamdex-proof",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Chat agent that confirms, then places Hideki testnet perp orders with @somnia-chain/markets-sdk.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "tsx --test lib/*.test.ts",
     "read": "tsx proof.ts",
     "place": "tsx proof.ts --place",
     "bridge": "tsx bridge.ts"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "type": "module",
   "dependencies": {
-    "@somnia-chain/markets-sdk": "^0.32.1",
-    "tsx": "^4.23.15",
-    "typescript": "^7.0.2",
+    "@somnia-chain/markets-sdk": "~0.32.1",
+    "next": "^15.5.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "viem": "^2.57.10"
+  },
+  "devDependencies": {
+    "@types/node": "^22.19.0",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.2"
   }
 }
